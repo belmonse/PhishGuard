@@ -1,0 +1,63 @@
+# PhishGuard 3.1.0
+**Sistema de detección y análisis de correos electrónicos sospechosos**
+
+**PhishGuard** es una aplicación de ciberseguridad desarrollada en Python, diseñada para identificar posibles intentos de phishing mediante el análisis heurístico de correos electrónicos.
+
+El sistema examina el contenido de los mensajes, enlaces, dominios, remitentes y archivos de correo electrónico, identificando patrones asociados con fraudes digitales, suplantación de identidad y técnicas de ingeniería social.
+
+### Justificación del proyecto
+
+PhishGuard surge de la necesidad de fortalecer la seguridad digital frente al aumento de los intentos de phishing, una de las técnicas más utilizadas para obtener información personal y credenciales mediante correos fraudulentos.
+
+El proyecto busca desarrollar una herramienta accesible que permita identificar señales sospechosas en los mensajes electrónicos, facilitando la detección de posibles amenazas y promoviendo una navegación más segura. Además, representa una aplicación práctica de conocimientos de programación, análisis de datos y ciberseguridad mediante el desarrollo de una solución tecnológica funcional.
+
+### Funcionalidades implementadas
+
+**1. Análisis de contenido y detección de phishing**
+- Identificación de expresiones de urgencia, amenazas y solicitudes de información confidencial.
+- Detección de patrones relacionados con suplantación de identidad y fraude.
+- Evaluación mediante un sistema de puntuación basado en reglas heurísticas.
+
+**2. Análisis de enlaces y dominios**
+- Identificación de enlaces HTTP sin cifrado y direcciones IP.
+- Detección de posibles imitaciones de dominios oficiales.
+- Reconocimiento de dominios internacionalizados (Punycode) y acortadores de URL.
+- Análisis de enlaces HTML cuyo texto visible no coincide con el destino real.
+- Inspección de URLs ocultas en parámetros de redirección, incluyendo enlaces codificados.
+
+**3. Análisis de remitentes y archivos EML**
+- Evaluación de posibles inconsistencias entre el remitente mostrado y su dirección electrónica.
+- Procesamiento de archivos `.eml` para extraer y analizar información del mensaje.
+- Interpretación de resultados SPF, DKIM y DMARC declarados en las cabeceras del correo, sin realizar validación criptográfica independiente.
+
+**4. Clasificación de amenazas**
+- Asignación de puntuaciones según las señales detectadas.
+- Clasificación del riesgo en tres niveles: bajo, medio y alto.
+- Presentación de hallazgos y advertencias para facilitar la interpretación de los resultados.
+- Control de puntuaciones repetidas por categoría de detección.
+
+**5. Desarrollo de interfaz y arquitectura**
+- Implementación de una interfaz gráfica interactiva utilizando Streamlit.
+- Desarrollo de una API REST local mediante FastAPI y Uvicorn.
+- Validación de datos de entrada mediante Pydantic.
+- Organización del código en módulos especializados para facilitar su mantenimiento y ampliación.
+
+### Tecnologías utilizadas
+
+**Lenguaje:** Python  
+**Frontend:** Streamlit  
+**Backend:** FastAPI, Uvicorn  
+**Validación:** Pydantic  
+**Análisis de dominios:** tldextract  
+**Procesamiento de correo:** Bibliotecas estándar de Python  
+**Herramientas de desarrollo:** Visual Studio Code, PowerShell
+
+### Resultados del desarrollo
+
+Se desarrolló una aplicación local funcional, capaz de analizar mensajes de correo electrónico y archivos EML, identificar múltiples categorías de señales sospechosas y generar una evaluación de riesgo.
+
+El proyecto incorporó pruebas con correos sintéticos, documentación técnica y empaquetado de la versión 3.1.0 para su instalación en otros entornos.
+
+Como desarrollo complementario, se creó un prototipo de extensión Manifest V3 para analizar mensajes abiertos en Gmail. Esta integración permanece pendiente de revisión debido a una advertencia de seguridad emitida por Opera.
+
+**Nota:** PhishGuard es una herramienta de apoyo basada en reglas heurísticas. Sus resultados no garantizan que un correo sea seguro ni sustituyen soluciones especializadas de protección del correo electrónico.
