@@ -1,0 +1,35 @@
+
+# Entorno virtual
+.venv/
+venv/
+
+# Archivos temporales de Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Configuracion local y secretos
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Archivos de correo y datos privados
+correos_prueba/
+*.eml
+
+# Pruebas antiguas archivadas
+pruebas_archivadas/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Configuracion local del editor
+.vscode/
+
+# Archivos de entrega
+PhishGuard_*.zip
+
+# Extension pendiente de revision
+extension/
